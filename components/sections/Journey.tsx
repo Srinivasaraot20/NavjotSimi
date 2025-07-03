@@ -251,23 +251,17 @@ const Journey = () => {
           </div>
         </div>
 
-        {/* Journey by Numbers - Animated */}
-        <div className={`mt-20 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-2xl p-8 md:p-12 glass ${isVisible ? 'animate-fadeInUp animate-delay-1200' : 'opacity-0'}`}>
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Journey by Numbers
-            </h3>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {journeyNumbers.map((stat, index) => (
-              <div key={index} className={`text-center animate-countUp animate-delay-${(index + 1) * 200}`}>
-                <div className="text-4xl font-bold text-blue-400 mb-2">{stat.number}</div>
-                <div className="text-lg font-semibold text-white mb-1">{stat.label}</div>
-                <div className="text-sm text-gray-400">{stat.description}</div>
+        {/* Journey Numbers - Centered */}
+        <div className="flex flex-wrap justify-center gap-8 mb-16">
+          {journeyNumbers.map((item, idx) => (
+            <div key={idx} className="text-center group animate-countUp animate-delay-${(idx + 1) * 100}">
+              <div className="bg-slate-800/50 glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover-lift border border-slate-700">
+                <div className="text-4xl font-bold text-blue-400 mb-2">{item.number}</div>
+                <div className="text-lg font-semibold text-white mb-1">{item.label}</div>
+                <div className="text-sm text-gray-400">{item.description}</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
