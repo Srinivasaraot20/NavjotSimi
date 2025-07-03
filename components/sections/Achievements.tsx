@@ -169,7 +169,7 @@ const Achievements = () => {
         </div>
 
         {/* Key Milestones - Animated */}
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 ${isVisible ? 'animate-fadeInUp animate-delay-200' : 'opacity-0'}`}>
+        <div className="flex flex-wrap justify-center gap-8 mb-16 ${isVisible ? 'animate-fadeInUp animate-delay-200' : 'opacity-0'}">
           {milestones.map((milestone, index) => (
             <div key={index} className={`text-center group animate-countUp animate-delay-${(index + 1) * 100}`}>
               <div className="bg-slate-800/50 glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover-lift border border-slate-700">
@@ -186,7 +186,7 @@ const Achievements = () => {
           <h3 className="text-3xl font-bold text-white mb-8 text-center">
             Featured Achievements
           </h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {featuredAchievements.map((achievement, index) => (
               <Card key={achievement.id} className={`bg-slate-800/50 border-slate-700 hover:bg-slate-800 transition-all duration-300 hover-lift glass animate-scaleIn animate-delay-${(index + 1) * 200}`}>
                 <CardHeader className="pb-4">
